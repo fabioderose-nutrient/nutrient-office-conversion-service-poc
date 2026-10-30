@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document conversion service</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Document conversion service</h1>
+    <span id="health" class="health">Checking service...</span>
+  </header>
+
+  <main>
+    <section class="panel">
+      <form id="form">
+        <label id="drop" class="drop" for="files">
+          <input id="files" type="file" multiple>
+          <strong>Drop files here</strong> or click to choose
+          <span id="accepted" class="hint"></span>
+        </label>
+        <ul id="selected" class="selected"></ul>
+
+        <div class="options">
+          <label>Output
+            <select id="output"></select>
+          </label>
+          <label class="check"><input id="merge" type="checkbox"> Merge into one PDF, in the order above</label>
+          <button id="convert" type="submit" disabled>Convert</button>
+          <button id="clear" type="button" class="secondary">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultPanel" class="panel" hidden>
+      <div class="result-head">
+        <h2>Results</h2>
+        <span id="summary" class="hint"></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="thumb-col">Preview</th>
+            <th>Input</th>
+            <th>Detected as</th>
+            <th class="num">Pages</th>
+            <th class="num">Time</th>
+            <th class="num">Size</th>
+            <th>Archive check</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody id="results"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

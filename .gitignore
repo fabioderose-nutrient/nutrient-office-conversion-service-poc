@@ -1,0 +1,22 @@
+# Build output
+target/
+
+# Local configuration
+.env
+
+# Output of scripts/convert-samples.sh
+converted/
+
+# Python
+__pycache__/
+.venv/
+venv/
+
+# IDE and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Logs
+*.log
